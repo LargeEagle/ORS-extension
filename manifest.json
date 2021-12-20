@@ -3,7 +3,13 @@
   "description": "make ORS great again",
   "version": "1.0",
   "manifest_version": 2,
-  "permissions": ["storage", "activeTab", "<all_urls>", "tabs"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "<all_urls>",
+    "tabs",
+    "notifications"
+  ],
   "background": {
     "service_worker": "background.js"
   },

@@ -14,7 +14,7 @@ var inputData;
 
 function redefineQuestionInfo() {
   targetID = localStorage.getItem("targetID");
-  var ctlNumber = parseInt(getOrdinalOfItems()) + 1;
+  // ctlNumber = parseInt(getOrdinalOfItems()) + 1;
 
   questionEditBTN = document.querySelector(
     "#Question-" + targetID + "_btnEdit"
@@ -52,7 +52,7 @@ function redefineQuestionInfo() {
     "#Question-" + targetID + "_dgAnswers__ctl" + ctlNumber + "_txtNewRefValue"
   );
 
-  inputData = localStorage.getItem("inputData");
+  inputData = JSON.parse(localStorage.getItem("inputData"));
 }
 function getOrdinalOfItems() {
   if (localStorage.getItem("currentItem") === null) {
@@ -152,7 +152,11 @@ chrome.runtime.onMessage.addListener(gotMessage);
 function gotMessage(message, sender, sendResponse) {
   // var info = [message.targetID, message.inputData];
   localStorage.setItem("targetID", message.targetID);
-  localStorage.setItem("inputData", message.inputData);
+  var rawInputData = message.inputData;
+
+  var TextboxToJSON = JSON.parse(message.inputData);
+
+  localStorage.setItem("inputData", JSON.stringify(TextboxToJSON));
   redefineQuestionInfo();
   startEdit();
   console.log(inputData);

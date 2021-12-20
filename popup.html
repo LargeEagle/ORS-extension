@@ -5,22 +5,61 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <!-- <link rel="stylesheet" href="button.css" /> -->
     <script src="/js/bootstrap.js"></script>
+    <style>
+      #CustomMSG {
+        color: red;
+        font-weight: bold;
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+      .container {
+        margin-bottom: 1em;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <div class="INPUT_id">
         <div>Question ID:</div>
         <div>
-          <textarea id="targetQuestion" cols="50" rows="2"></textarea>
+          <textarea id="targetQuestion" cols="60" rows="1"></textarea>
         </div>
       </div>
 
       <div class="INPUT_Data">
         <div>data:</div>
         <div>
-          <textarea id="inputData" cols="50" rows="15"></textarea>
+          <textarea
+            id="inputData"
+            cols="60"
+            rows="15"
+            placeholder='[
+            {
+               "seq":"1",
+               "DisplayAnswer":"ABCD",
+               "value":"1001",
+               "ReferCode":"123",
+               "OptionalTextbox":"no"
+            },
+            {
+               "seq":"2",
+               "DisplayAnswer":"EFGH",
+               "value":"1002",
+               "ReferCode":"456",
+               "OptionalTextbox":"yes"
+            },
+            {
+               "seq":"3",
+               "DisplayAnswer":"IJKL",
+               "value":"1003",
+               "ReferCode":"759",
+               "OptionalTextbox":"no"
+            }
+         ]'
+          ></textarea>
         </div>
       </div>
+      <div id="CustomMSG"></div>
       <button id="clickAdd" class="btn btn-primary">Add</button>
     </div>
 
