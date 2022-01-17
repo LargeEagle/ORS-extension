@@ -15,7 +15,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://form.hktdc.com/UI_AdminSite/Form/*"],
+      "matches": [
+        "http://form.hktdc.com/UI_AdminSite/Form/*",
+        "https://form.hktdc.com/UI_AdminSite/Form/*",
+        "http://formuat.hktdc.com/UI_AdminSite/Form/*",
+        "https://formuat.hktdc.com/UI_AdminSite/Form/*"
+      ],
       "js": ["content_script.js"]
     }
   ],
