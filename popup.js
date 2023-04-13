@@ -7,11 +7,15 @@ function injectTheScript() {
   });
 }
 
-document
-  .querySelector("#clickAdd")
-  .addEventListener("click", addQustionItemStart);
+document.querySelector("#clickAdd").addEventListener("click", function () {
+  updateQustionItemStart("add");
+});
 
-function addQustionItemStart() {
+document.querySelector("#clickEdit").addEventListener("click", function () {
+  updateQustionItemStart("edit");
+});
+
+function updateQustionItemStart(updateMode) {
   //var targetID = document.querySelector("#targetQuestion").value;
   var inputData = document.querySelector("#inputData").value;
   //   localStorage.setItem("targetID", targetID);
@@ -29,13 +33,14 @@ function addQustionItemStart() {
     )
   ) {
     //the json is ok
-    console.log(`the json is ok`);
-    document.querySelector("#inputData").style.borderColor = "black";
+    // console.log(`the json is ok`);
+    document.querySelector("#inputData").style.borderColor = "green";
     document.querySelector("#CustomMSG").innerHTML = "";
 
     var message = {
       targetID: document.querySelector("#targetQuestion").value,
       inputData: document.querySelector("#inputData").value,
+      mode: updateMode,
     };
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
