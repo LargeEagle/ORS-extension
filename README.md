@@ -1,6 +1,6 @@
 ## Introduce:
 
-To save man power, using chrome extension to import checkbox list question items for ORS admin question builder.  
+To save man power and improve efficiency, using chrome extension to import checkbox list question items for ORS admin question builder.  
 
 ## Reference:
 
